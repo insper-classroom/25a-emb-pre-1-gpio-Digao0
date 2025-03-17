@@ -2,8 +2,8 @@
 #include "pico/stdlib.h"
 #include "hardware/gpio.h"
 
-const int BTN_PIN = 26;
-const int BTN_PIN_2 = 7;
+const int BTN_PIN = 7;
+const int BTN_PIN_2 = 26;
 
 int main() {
     stdio_init_all();
@@ -24,14 +24,14 @@ int main() {
             cnt_1++;
             printf("Botao 1: %d\n", cnt_1);
             while (!gpio_get(BTN_PIN)) {}  
-            sleep_ms(100);  
+            sleep_ms(200);  
         }
 
         if (!gpio_get(BTN_PIN_2)) {  
             cnt_2++;
             printf("Botao 2: %d\n", cnt_2);
             while (!gpio_get(BTN_PIN_2)) {}  
-            sleep_ms(100);  
+            sleep_ms(200);  
         }
     }
 }
